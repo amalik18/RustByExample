@@ -1,4 +1,6 @@
 /// `()` is the Unit type whose only valuable is an empty tuple
+use primitives::literals_operators::literal_main;
+use primitives::tuples::tuple_main;
 fn main() {
 
     // Variables can be type annotated
@@ -24,5 +26,9 @@ fn main() {
 
     // variables can be overwritten with shadowing
     let mutable = true;
+
+    literal_main();
+
+    tuple_main();
 
 }
