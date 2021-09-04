@@ -1,6 +1,7 @@
 /// `()` is the Unit type whose only valuable is an empty tuple
 use primitives::literals_operators::literal_main;
 use primitives::tuples::tuple_main;
+use primitives::arrays_and_slices::array_main;
 fn main() {
 
     // Variables can be type annotated
@@ -27,8 +28,13 @@ fn main() {
     // variables can be overwritten with shadowing
     let mutable = true;
 
+    println!("----------main method from literals_operators.rs----------");
     literal_main();
 
+    println!("----------main method from tuples.rs----------");
     tuple_main();
+
+    println!("----------main method from arrays_and_slices.rs----------");
+    array_main();
 
 }

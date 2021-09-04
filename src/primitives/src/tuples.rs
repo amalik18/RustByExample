@@ -12,8 +12,18 @@ fn reverse(pair: (i32, bool)) -> (bool, i32) {
     (boolean, integer)
 }
 
+
 #[derive(Debug)]
 struct Matrix(f32, f32, f32, f32);
+
+impl Matrix {
+
+    fn transpose(&mut self) {
+        let temp_val = self.2;
+        self.2 = self.1;
+        self.1 = temp_val;
+    }
+}
 
 impl Display for Matrix {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
@@ -58,8 +68,10 @@ pub fn tuple_main() {
     let (int1, str1, float1, bool1) = tuple;
     println!("{:#?}, {:#?}, {:#?}, {:#?}", int1, str1, float1, bool1);
 
-    let matrix = Matrix(1.1, 1.2, 2.1, 2.2);
+    let mut matrix = Matrix(1.1, 1.2, 2.1, 2.2);
 
-    println!("{}", matrix);
+    println!("Matrix:\n{}", matrix);
 
+    matrix.transpose();
+    println!("Transposed Matrix:\n{}", matrix)
 }
